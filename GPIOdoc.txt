@@ -1,0 +1,31 @@
+Jason Hicks
+GPIO Documentation
+_____________________________________________________________________________________________________________
+
+1. Refer to page 278 in the RM. In section 9.4.1, you see that in GPIOx_MODER (x = B) there 
+is a guide for which 00 is input mode and 01 is output. PB2 must be set to output. First, the bits at PB2's
+location must be cleared. These are bits 4 and 5. This is done by bitwise &-ing ~(0x03<<(2*2)) which equates
+to 11001111. These two bits now become 00 (input). To chnge the bits to output, they are bitwise |-ed with 
+10000 which changes the 4th bit to a 1 making it 01 (output).
+
+2. Similar to question 1, we are still referring to page 278 in the RM. We are now looking at bits 16 
+and 17 and its GPIOE. We clear these bits by bitwise &-ing 11001111111111111111 and setting it to 01
+(output) by bitwise |-ing with 10000000000000000.
+
+3. When referring to page 278 in the RM and section 9.4.2, we see an offset of 0x04 and bits are set to 0
+for push-pull output type and 1 for open-drain. Therefore, the bit at the second index of GPIOB_OTYPER 
+and the bit at the eighth index of GPIOE_OTYPER must both be 0. We have to bitwise & a 0 into these
+positions. This equates to 011111111 for PE8 and 011 for PB2.
+
+4. We are now referring to page 279 in the RM at section 9.4.4. In order to set the output type as 
+no pull-up and pull-down, you need 00. For PE8 you must set bits 16 and 17 to 00 in GPIOE_PUPDR. For PB2
+you must set bits 4 and 5 to 00 in GPIOB_PUPDR. This is done by bitwise &-ing 11001111111111111111 and
+11001111.
+
+5. If we go back to page 278 in the RM, in section 9.4.1 we see that we have to set GPIOA_MODER 0,1,2,3, 
+and 5 to 00 (input). This is done by bitwise &-ing 001100000000. PA4 shall not be modified.
+
+6. Referring to page 279 at section 9.4.4 again, we see that we must use 10 for pull-down. This is done
+by bitwise &-ing 001100000000 to clear each bit. Then we must bitwise | 100010101010. PA4 shall not be
+modified.
+_____________________________________________________________________________________________________________

@@ -1,0 +1,51 @@
+Jason Hicks
+MARIE - Data Path Exercise
+__________________________________________________________________________________
+
+1.a PC is passing the next address to the data location in the MAR
+1.b the MAR is initializing this location in memory
+1.c The currently-executing instruction from the IR is being run on the 
+value being read from or intered into memory from the MBR
+1.d microoperation executed at the end of every fetch cycle to prepare
+for the next value being fetched
+1.e puts up the input dialog box
+1.f The data being inputted is held in the InREG to be read by
+1.g The computation result of the value held in the InREG is
+stored as data in the accumulator
+__________________________________________________________________________________
+
+2.a PC is passing the next address to the data location in the MAR
+2.b the MAR is initializing this location in memory
+2.c The currently-executing instruction from the IR is being run on the 
+value being read from or intered into memory from the MBR
+2.d microoperation executed at the end of every fetch cycle to prepare
+for the next value being fetched
+2.e The instruction (to store a value) is being read in from the IR
+2.f Sending the values IR address in memory to be stored in the MAR
+2.g The accumulator sends the new value to the MBR to hold the value being read
+2.h This value being read from the MBR and its address in memory stored in the MAR
+__________________________________________________________________________________
+
+3.a PC is passing the next address to the data location in the MAR
+3.b the MAR is initializing this location in memory
+3.c The currently-executing instruction from the IR is being run on the 
+value being read from or intered into memory from the MBR
+3.d microoperation executed at the end of every fetch cycle to prepare
+for the next value being fetched
+3.e puts up the input dialog box
+3.f The data being inputted is held in the InREG to be read by
+3.g The computation result of the value held in the InREG is
+stored as data in the accumulator
+__________________________________________________________________________________
+
+4.a PC is passing the next address to the data location in the MAR
+4.b the MAR is initializing this location in memory
+4.c The currently-executing instruction from the IR is being run on the 
+value being read from or intered into memory from the MBR
+4.d microoperation executed at the end of every fetch cycle to prepare
+for the next value being fetched
+4.e The instruction (to add a value) is being read in from the IR
+4.f Sending the values IR address in memory to be stored in the MAR
+4.g Loads the value stored at the address into the MBR
+4.h add value in AC with MBR value and store it back into AC
+__________________________________________________________________________________
